@@ -27,3 +27,5 @@ sprites = {
 	walk: s_player_walk,
 	cry: s_player_cry
 }
+
+depth = -1;

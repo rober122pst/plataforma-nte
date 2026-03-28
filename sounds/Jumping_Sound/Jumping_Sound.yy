@@ -14,8 +14,8 @@
   "exportDir":"",
   "name":"Jumping_Sound",
   "parent":{
-    "name":"jumping sound",
-    "path":"folders/Sounds/jumping sound.yy",
+    "name":"Jumping Sound",
+    "path":"folders/Sounds/Jumping Sound.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

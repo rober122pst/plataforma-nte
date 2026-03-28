@@ -30,10 +30,12 @@ player_move = function() {
 		buffered_timer--;
 	}
 
-	if (buffered_timer > 0 && coyote_timer > 0 && !danger_zone) {
+	if (buffered_timer > 0 && coyote_timer > 0 
+		&& (!danger_zone || o_player.equiped == danger_zone.danger_item_id)) {
 		vspd = jump_force;
 		buffered_timer = 0;
 		coyote_timer = 0;
+		audio_play_sound(Jumping_Sound, 0, 0);
 	}
 	
 	if (place_meeting(x+hspd, y, o_collider)) {
@@ -61,5 +63,14 @@ player_move = function() {
 	} else {
 		sprite_index = sprites.idle;	
 	}
-	show_debug_message("----------");
+}
+
+player_win = function() {
+	x++;
+	sprite_index = sprites.walk;
+	
+	if (x > room_width) {
+		layer_sequence_create("Sequences", camera_get_view_x(view_camera[0]) + 360 / 2, camera_get_view_y(view_camera[0]) + 202 / 2, Fade_In);
+		
+	}
 }

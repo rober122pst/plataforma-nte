@@ -1,0 +1,1 @@
+//layer_sequence_create("Sequences", camera_get_view_x(view_camera[0]) + 360 / 2, camera_get_view_y(view_camera[0]) + 202 / 2, Fade_Out);

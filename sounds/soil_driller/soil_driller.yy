@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"soil_driller",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":59.808006,
+  "exportDir":"",
+  "name":"soil_driller",
+  "parent":{
+    "name":"Danger Zones",
+    "path":"folders/Sounds/Danger Zones.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"soil_driller.mp3",
+  "volume":1.0,
+}

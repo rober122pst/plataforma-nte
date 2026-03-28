@@ -33,6 +33,8 @@ function set_in_danger_zone(in_danger, danger_zone = noone, input_dir = 0) {
 			hspd = 0;
 			image_speed = 1;
 			sprites.idle = sprites.cry;
+		} else {
+			sprites.idle = s_player_idle;	
 		}
 	} else {
 		image_speed = 1;

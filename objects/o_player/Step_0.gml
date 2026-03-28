@@ -1,3 +1,3 @@
 state();
 
-if (y > room_height) room_restart();
+show_debug_message(point_distance(x, y, o_danger_zone.x, o_danger_zone.y))

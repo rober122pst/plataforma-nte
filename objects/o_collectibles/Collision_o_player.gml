@@ -1,7 +1,4 @@
-if (o_collectibles)
-{
 	
-	instance_destroy();
-	
-	effect_create_layer("Effects", ef_ring, x, y, .5, c_yellow);
-}
+instance_destroy();
+audio_play_sound(collectible_audio_original, 0, 0, 1, .55);
+effect_create_layer("Effects", ef_ring, x, y, .02, c_white);

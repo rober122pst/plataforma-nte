@@ -7,4 +7,4 @@ cam_zoom = 1;
 zoom_target =1;
 
 x = target.x;
-y = target.y-height/4;
+y = target.y-height/8;

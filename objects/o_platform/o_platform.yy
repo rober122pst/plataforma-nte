@@ -39,5 +39,5 @@
     "path":"sprites/s_platform/s_platform.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

@@ -3,6 +3,8 @@
   "%Name":"o_danger_zone",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"o_danger_zone",
@@ -27,6 +29,7 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v2","%Name":"danger_item_id","filters":[],"listItems":[],"multiselect":false,"name":"danger_item_id","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"sound_","filters":[],"listItems":[],"multiselect":false,"name":"sound_","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"soil_driller","path":"sounds/soil_driller/soil_driller.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"soil_driller","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
@@ -36,5 +39,5 @@
     "path":"sprites/s_danger_zone/s_danger_zone.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }
