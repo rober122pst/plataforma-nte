@@ -14,7 +14,8 @@ in_danger_zone = false;
 
 blocked_dir = 0;
 
-inventory = [];
+max_items = o_gui.inventory_slots;
+inventory = array_create(max_items, -1);
 equiped = -1;
 
 var states = player_states;

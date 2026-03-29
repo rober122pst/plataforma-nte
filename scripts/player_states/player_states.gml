@@ -12,44 +12,21 @@ player_move = function() {
 	
 	hspd = spd*dir;
 	
-	// Pulo
-	vspd += grav;
-	if (vspd >= max_vspd) vspd = max_vspd;
-
-	var on_ground = place_meeting(x, y+1, o_collider);
-
-	if (on_ground) {
-		coyote_timer = coyote_timer_frames;
-	} else {
-		coyote_timer--;
-	}
-
-	if (INPUT_JUMP) {
-		buffered_timer = buffered_timer_frames;
-	} else {
-		buffered_timer--;
-	}
-
-	if (buffered_timer > 0 && coyote_timer > 0 
-		&& (!danger_zone || o_player.equiped == danger_zone.danger_item_id)) {
-		vspd = jump_force;
-		buffered_timer = 0;
-		coyote_timer = 0;
-		audio_play_sound(Jumping_Sound, 0, 0);
-	}
+	jump(danger_zone);
 	
-	if (place_meeting(x+hspd, y, o_collider)) {
-		while (!place_meeting(x+sign(hspd), y, o_collider)) x += sign(hspd);
+	var _collider = o_collider;
+	
+	if (place_meeting(x+hspd, y, _collider)) {
+		while (!place_meeting(x+sign(hspd), y, _collider)) x += sign(hspd);
 		hspd = 0;
 	}
 	
-	x += hspd;
-
-	var _collider = o_collider;
+	x += hspd;	
+	
 	var vertical_collision = place_meeting(x, y+vspd, _collider);
 
 	if (vertical_collision) {
-		while (!place_meeting(x, y+sign(vspd), o_collider)) {
+		while (!place_meeting(x, y+sign(vspd), _collider)) {
 			y += sign(vspd);
 		}
 		vspd = 0;

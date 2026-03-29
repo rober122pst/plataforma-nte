@@ -1,3 +1,16 @@
 state();
 
-show_debug_message(point_distance(x, y, o_danger_zone.x, o_danger_zone.y))
+var _inputs = [
+    EQUIP_1,
+    EQUIP_2,
+    EQUIP_3,
+    EQUIP_4,
+	EQUIP_5
+];
+
+for (var i = 0; i < array_length(_inputs); i++) {
+    if (_inputs[i] && inventory[i] != -1) {
+        equiped = i;
+        break;
+    }
+}
