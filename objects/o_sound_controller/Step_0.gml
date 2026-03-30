@@ -1,2 +1,2 @@
 
-audio_listener_position(o_player.x, o_player.y, 0);
+audio_listener_position(o_camera.x, o_camera.y, 0);
