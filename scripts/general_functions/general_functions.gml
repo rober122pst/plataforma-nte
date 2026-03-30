@@ -5,13 +5,21 @@ function camera_zoom(zoom_target = 0.5) {
 function set_in_danger_zone(in_danger, danger_zone = noone, input_dir = 0) {
 	if (danger_zone != noone) {
 		var danger_center_x = danger_zone.x + (danger_zone.sprite_width)/2;
-
+		
+		if (!audio_is_playing(snd_heartbeats)) {
+			heartbeats = audio_play_sound(snd_heartbeats, 5, 1);	
+			audio_sound_gain(heartbeats, 0, 0);
+			audio_sound_gain(heartbeats, 1, 1000);
+		}
+		show_debug_message(heartbeats)
 		if (in_danger) {
 			var danger_dir = sign(danger_center_x - o_player.x); 
 	
 			if (input_dir == danger_dir && blocked_dir == 0) {
 				camera_zoom(0.5);
 				spd *= 0.9;
+				if (heartbeats)
+					audio_sound_gain(heartbeats, 1, 1000);
 				image_speed = spd / 2;
 			} 
 
@@ -33,14 +41,15 @@ function set_in_danger_zone(in_danger, danger_zone = noone, input_dir = 0) {
 			hspd = 0;
 			image_speed = 1;
 			sprites.idle = sprites.cry;
-		} else {
-			sprites.idle = s_player_idle;	
 		}
 	} else {
 		image_speed = 1;
 		camera_zoom(1);
+		if (heartbeats)
+			audio_sound_gain(heartbeats, 0, 500);
 		blocked_dir = 0;
-		spd = 2;	
+		spd = 2;
+		sprites.idle = s_player_idle;
 	}
 }
 

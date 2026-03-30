@@ -8,7 +8,11 @@ player_move = function() {
 	if (danger_zone) {
 		if (equiped != danger_zone.danger_item_id) set_in_danger_zone(true, danger_zone, dir);	
 	}
-	else set_in_danger_zone(false);
+	else {
+		if (heartbeats && audio_sound_get_gain(heartbeats) == 0)
+			audio_stop_sound(heartbeats);
+		set_in_danger_zone(false);
+	}
 	
 	hspd = spd*dir;
 	
@@ -47,7 +51,6 @@ player_win = function() {
 	sprite_index = sprites.walk;
 	
 	if (x > room_width) {
-		layer_sequence_create("Sequences", camera_get_view_x(view_camera[0]) + 360 / 2, camera_get_view_y(view_camera[0]) + 202 / 2, Fade_In);
-		
+		global.level_completed = true;
 	}
 }

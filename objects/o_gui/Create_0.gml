@@ -1,5 +1,7 @@
-view_height = view_hport[0];
-view_width = view_wport[0];
+view_height = display_get_gui_height();
+view_width = display_get_gui_width();
+
+display_set_gui_size(view_width, view_height);
 
 center = view_width / 2;
 middle = view_height / 2;
@@ -10,3 +12,7 @@ inventory_slots = 5;
 slot_width = sprite_get_width(s_inventory)*scale;
 slot_height = sprite_get_height(s_inventory)*scale;
 
+h_box_up = 0;
+h_box_down = view_hport[0];
+
+room_start = false;

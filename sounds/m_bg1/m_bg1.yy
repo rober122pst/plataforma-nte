@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"heartbeats",
+  "%Name":"m_bg1",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,17 +10,17 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":8.045714,
+  "duration":450.87347,
   "exportDir":"",
-  "name":"heartbeats",
+  "name":"m_bg1",
   "parent":{
-    "name":"heartbeats",
-    "path":"folders/Sounds/heartbeats.yy",
+    "name":"Background Sounds",
+    "path":"folders/Sounds/Background Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"heartbeats.mp3",
-  "volume":1.0,
+  "soundFile":"m_bg1.mp3",
+  "volume":0.7,
 }

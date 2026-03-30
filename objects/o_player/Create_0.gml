@@ -18,6 +18,8 @@ max_items = o_gui.inventory_slots;
 inventory = array_create(max_items, -1);
 equiped = -1;
 
+heartbeats = noone;
+
 var states = player_states;
 states();
 
