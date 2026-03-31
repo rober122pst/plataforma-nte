@@ -10,7 +10,7 @@ if (!instance_exists(o_collectibles)) {
 		case rm_oculos:
 			if (!array_contains(o_player.inventory, 1)) {
 				array_insert(o_player.inventory, 1, 1);
-				o_player.equiped = 0;
+				o_player.equiped = 1;
 				audio_play_sound(Som_quando_liberar_o_item, 0, 0);
 			}
 			break;
