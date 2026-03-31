@@ -1,4 +1,6 @@
-audio_emitter_position(emit, x + sprite_width / 2, y + sprite_height, 0);
+if (sound_) {
+	audio_emitter_position(emit, x + sprite_width / 2, y + sprite_height, 0);
+}
 
 if (instance_exists(o_player)) {
 	if (o_player.equiped != danger_item_id

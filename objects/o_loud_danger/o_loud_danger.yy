@@ -1,0 +1,43 @@
+{
+  "$GMObject":"",
+  "%Name":"o_loud_danger",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
+  "managed":true,
+  "name":"o_loud_danger",
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"o_danger_zone","path":"objects/o_danger_zone/o_danger_zone.yy",},"propertyId":{"name":"danger_item_id","path":"objects/o_danger_zone/o_danger_zone.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0",},
+  ],
+  "parent":{
+    "name":"Danger Zones",
+    "path":"folders/Objects/Danger Zones.yy",
+  },
+  "parentObjectId":{
+    "name":"o_danger_zone",
+    "path":"objects/o_danger_zone/o_danger_zone.yy",
+  },
+  "persistent":false,
+  "physicsAngularDamping":0.1,
+  "physicsDensity":0.5,
+  "physicsFriction":0.2,
+  "physicsGroup":1,
+  "physicsKinematic":false,
+  "physicsLinearDamping":0.1,
+  "physicsObject":false,
+  "physicsRestitution":0.1,
+  "physicsSensor":false,
+  "physicsShape":1,
+  "physicsShapePoints":[],
+  "physicsStartAwake":true,
+  "properties":[],
+  "resourceType":"GMObject",
+  "resourceVersion":"2.0",
+  "solid":false,
+  "spriteId":{
+    "name":"s_loud_zone",
+    "path":"sprites/s_loud_zone/s_loud_zone.yy",
+  },
+  "spriteMaskId":null,
+  "visible":false,
+}

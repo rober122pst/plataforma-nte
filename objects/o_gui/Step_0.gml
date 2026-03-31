@@ -5,7 +5,8 @@ if (global.level_completed) {
 	if (h_box_down <= middle) h_box_down = middle;
 	
 	if (h_box_down <= middle && h_box_up >= middle) {
-		room_goto_next();
+		room_goto(global.levels[global.level_index]);
+		global.level_index++;
 		global.level_completed = false;
 	}
 }
