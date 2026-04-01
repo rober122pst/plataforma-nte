@@ -75,6 +75,7 @@
     {"id":{"name":"pt_smoke_building","path":"particles/pt_smoke_building/pt_smoke_building.yy",},},
     {"id":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
     {"id":{"name":"rm_botas","path":"rooms/rm_botas/rm_botas.yy",},},
+    {"id":{"name":"rm_capa","path":"rooms/rm_capa/rm_capa.yy",},},
     {"id":{"name":"rm_fone","path":"rooms/rm_fone/rm_fone.yy",},},
     {"id":{"name":"rm_oculos","path":"rooms/rm_oculos/rm_oculos.yy",},},
     {"id":{"name":"RoomUI","path":"roomui/RoomUI/RoomUI.yy",},},
@@ -125,6 +126,7 @@
     {"roomId":{"name":"rm_oculos","path":"rooms/rm_oculos/rm_oculos.yy",},},
     {"roomId":{"name":"Menu","path":"rooms/Menu/Menu.yy",},},
     {"roomId":{"name":"rm_botas","path":"rooms/rm_botas/rm_botas.yy",},},
+    {"roomId":{"name":"rm_capa","path":"rooms/rm_capa/rm_capa.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
