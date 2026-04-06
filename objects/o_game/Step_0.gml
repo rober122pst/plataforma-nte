@@ -7,22 +7,13 @@ with (o_collectibles) {
 }
 
 if (!has_syllable) {
-	array_foreach(
-		global.levels,
-		function (_element, _index) {
-			var only_items = [];
-			array_copy(only_items, 0, o_player.inventory, 0, o_gui.inventory_slots);
-			array_pop(only_items);
-			
-			if (room == _element) {
-				if (!array_contains(only_items, _index)) {
-					o_player.inventory[_index] = _index;
-					o_player.equiped = _index;
-					audio_play_sound(Som_quando_liberar_o_item, 0, 0);
-				}	
-			}
-		}
-	);
+    var _index = array_get_index(global.levels, room);
+
+    if (_index != -1 && o_player.inventory[_index] != _index) {
+        o_player.inventory[_index] = _index;
+        o_player.equiped = _index;
+        audio_play_sound(Som_quando_liberar_o_item, 0, 0);
+    }
 }
 
 #region DEBUG

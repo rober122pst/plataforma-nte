@@ -9,3 +9,5 @@ global.levels = [
 
 global.level_index = 1;
 has_syllable = false;
+
+global.items_id = [ "phones", "glasses", "boots", "cape" ];

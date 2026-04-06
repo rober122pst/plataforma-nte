@@ -40,7 +40,6 @@ function set_in_danger_zone(in_danger, danger_zone = noone, input_dir = 0, equip
 		if (abs(hspd) <= 0.3 && input_dir == 0) {
 			hspd = 0;
 			image_speed = 1;
-			sprites.idle = sprites.cry;
 		}
 	} else {
 		image_speed = 1;
@@ -49,7 +48,6 @@ function set_in_danger_zone(in_danger, danger_zone = noone, input_dir = 0, equip
 			audio_sound_gain(heartbeats, 0, 500);
 		blocked_dir = 0;
 		spd = 2;
-		sprites.idle = s_player_idle;
 	}
 }
 

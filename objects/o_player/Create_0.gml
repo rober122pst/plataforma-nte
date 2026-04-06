@@ -26,6 +26,26 @@ states();
 state = player_move;
 
 sprites = {
+	boots: {
+		idle: s_player_idle_boot,
+		walk: s_player_walk_boot,
+		cry: s_player_cry_boot
+	},
+	cape: {
+		idle: s_player_idle_cape,
+		walk: s_player_walk_cape,
+		cry: s_player_cry_cape
+	},
+	phones: {
+		idle: s_player_idle_phones,
+		walk: s_player_walk_phones,
+		cry: s_player_cry_phones
+	},
+	glasses: {
+		idle: s_player_idle_glasses,
+		walk: s_player_walk_glasses,
+		cry: s_player_cry_glasses
+	},
 	idle: s_player_idle,
 	walk: s_player_walk,
 	cry: s_player_cry

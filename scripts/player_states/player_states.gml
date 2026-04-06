@@ -86,16 +86,30 @@ player_move = function() {
 	y += vspd;
 	
 	if (hspd != 0) {
-		if (place_meeting(x, y+1, _collider)) sprite_index = sprites.walk;
+		if (place_meeting(x, y+1, _collider)) {
+			if (equiped > -1) {
+				sprite_index = sprites[$ global.items_id[equiped]].walk;
+			} else {
+				sprite_index = sprites.walk;	
+			}
+		}
 		if (dir != 0) image_xscale = dir;
 	} else {
-		sprite_index = sprites.idle;	
+		if (equiped > -1) {
+			sprite_index = (danger_zone) ? sprites[$ global.items_id[equiped]].cry : sprites[$ global.items_id[equiped]].idle;	
+		} else {
+			sprite_index = (danger_zone) ? sprites.cry : sprites.idle;	
+		}
 	}
 }
 
 player_win = function() {
 	x++;
-	sprite_index = sprites.walk;
+	if (equiped > -1) {
+		sprite_index = sprites[$ global.items_id[equiped]].walk;
+	} else {
+		sprite_index = sprites.walk;	
+	}
 	
 	if (x > room_width) {
 		global.level_completed = true;
