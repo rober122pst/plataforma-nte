@@ -6,15 +6,62 @@ player_move = function() {
 	var danger_zone = instance_place(x, y, o_danger_zone);
 
 	if (danger_zone) {
-		if (equiped != danger_zone.danger_item_id) set_in_danger_zone(true, danger_zone, dir);	
+		if (equiped != danger_zone.danger_item_id) set_in_danger_zone(true, danger_zone, dir);
+		else {
+			set_in_danger_zone(false);
+		}
 	}
 	else {
-		if (heartbeats && audio_sound_get_gain(heartbeats) == 0)
-			audio_stop_sound(heartbeats);
 		set_in_danger_zone(false);
 	}
 	
-	hspd = spd*dir;
+	if (heartbeats && audio_sound_get_gain(heartbeats) == 0)
+		audio_stop_sound(heartbeats);
+	
+	var acc = .2;
+	if (dir != 0) hspd = lerp(hspd, spd * dir, 0.15);
+	else hspd = hspd > 0 ? max(0, hspd - acc) : min(0, hspd + acc);
+	
+	var _wind_area = instance_place(x, y, o_wind_zone);
+	if (_wind_area) {	
+		show_debug_message(_wind_area.angle)
+		switch (_wind_area.angle) {
+			case 0:
+				if (hspd < 0) {
+					if (dir == 0)
+						hspd = ceil(lerp(hspd, 0, 0.15) * 100) / 100;
+				}
+	
+				hspd += .65;
+		
+				if (dir == 0 && hspd > 4) {
+					hspd = 4;
+				}
+				break;
+			case 180:
+				if (hspd > 0) {
+					if (dir == 0)
+						hspd = floor(lerp(hspd, 0, 0.15) * 100) / 100;
+				}
+	
+				hspd -= .65;
+		
+				if (dir == 0 && hspd < -4) {
+					hspd = -4;
+				}
+				break;
+			case 275:
+				if (vspd > 0) {
+				    vspd = lerp(vspd, 0, 0.05);
+				}
+	
+				vspd -= .65;
+				coyote_timer = 0;
+		
+				vspd = max(vspd, -8);
+				break;
+		}	
+	}
 	
 	jump(danger_zone);
 	
@@ -39,8 +86,8 @@ player_move = function() {
 	y += vspd;
 	
 	if (hspd != 0) {
-		sprite_index = sprites.walk;
-		image_xscale = dir;
+		if (place_meeting(x, y+1, _collider)) sprite_index = sprites.walk;
+		if (dir != 0) image_xscale = dir;
 	} else {
 		sprite_index = sprites.idle;	
 	}

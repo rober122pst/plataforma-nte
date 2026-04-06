@@ -9,6 +9,6 @@ if (instance_exists(o_player)) {
 		function (_element, _index) {
 			var _margin = 10;
 			if (_element != -1)
-				draw_sprite_ext(s_items, _element, 40 + (slot_width) / 2 + (slot_width + _margin)*_index, 40 + slot_height / 2, scale, scale, 0, c_white, 1);
-		});	
+				draw_sprite_ext(_index == inventory_slots - 1 ? s_dice : s_items, _element, 40 + (slot_width) / 2 + (slot_width + _margin)*_index, 40 + slot_height / 2, scale, scale, 0, c_white, 1);
+		});
 }

@@ -2,7 +2,7 @@ function camera_zoom(zoom_target = 0.5) {
 	o_camera.zoom_target = zoom_target;
 }
 
-function set_in_danger_zone(in_danger, danger_zone = noone, input_dir = 0) {
+function set_in_danger_zone(in_danger, danger_zone = noone, input_dir = 0, equiped = -1) {
 	if (danger_zone != noone) {
 		var danger_center_x = danger_zone.x + (danger_zone.sprite_width)/2;
 		
@@ -55,7 +55,8 @@ function set_in_danger_zone(in_danger, danger_zone = noone, input_dir = 0) {
 
 function jump(danger_zone) {
 	vspd += grav;
-	if (vspd >= max_vspd) vspd = max_vspd;
+	
+	vspd = min(vspd, max_vspd);
 
 	var on_ground = place_meeting(x, y+1, o_collider);
 

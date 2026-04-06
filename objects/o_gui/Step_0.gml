@@ -1,10 +1,18 @@
+if (!instance_exists(o_game)) return;
+
 if (global.level_completed) {
 	h_box_up += 15;
 	if (h_box_up >= middle) h_box_up = middle;
 	h_box_down -= 15;
 	if (h_box_down <= middle) h_box_down = middle;
 	
-	if (h_box_down <= middle && h_box_up >= middle) {
+	if (h_box_down <= middle && h_box_up >= middle) {	
+		if (global.level_index == 4) {
+			instance_destroy(o_settings_obj);
+			instance_destroy(o_player)
+			room_goto(Menu);
+			exit;
+		}
 		room_goto(global.levels[global.level_index]);
 		global.level_index++;
 		global.level_completed = false;
