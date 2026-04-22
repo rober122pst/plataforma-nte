@@ -33,9 +33,7 @@
     {"x":0.0,"y":64.0,},
   ],
   "physicsStartAwake":true,
-  "properties":[
-    {"$GMObjectProperty":"v2","%Name":"silaba","filters":[],"listItems":[],"multiselect":false,"name":"silaba","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"FO\"","varType":4,},
-  ],
+  "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,

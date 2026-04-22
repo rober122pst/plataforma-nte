@@ -110,6 +110,7 @@
     {"id":{"name":"Som_quando_liberar_o_item","path":"sounds/Som_quando_liberar_o_item/Som_quando_liberar_o_item.yy",},},
     {"id":{"name":"bg_menu","path":"sprites/bg_menu/bg_menu.yy",},},
     {"id":{"name":"s_back","path":"sprites/s_back/s_back.yy",},},
+    {"id":{"name":"s_bitmap","path":"sprites/s_bitmap/s_bitmap.yy",},},
     {"id":{"name":"s_brigth_zone","path":"sprites/s_brigth_zone/s_brigth_zone.yy",},},
     {"id":{"name":"s_btn_config","path":"sprites/s_btn_config/s_btn_config.yy",},},
     {"id":{"name":"s_btn_play","path":"sprites/s_btn_play/s_btn_play.yy",},},

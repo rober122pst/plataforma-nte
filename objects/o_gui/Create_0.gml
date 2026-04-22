@@ -16,3 +16,5 @@ h_box_up = 0;
 h_box_down = view_hport[0];
 
 room_start = false;
+
+font_silabas = font_add_sprite_ext(s_bitmap, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÇçÓ", true, 0);

@@ -13,7 +13,7 @@ if (global.level_completed) {
 			room_goto(Menu);
 			exit;
 		}
-		room_goto(global.levels[global.level_index]);
+		room_goto(global.levels[global.level_index][0]);
 		global.level_index++;
 		global.level_completed = false;
 	}

@@ -12,3 +12,6 @@ if (instance_exists(o_player)) {
 				draw_sprite_ext(_index == inventory_slots - 1 ? s_dice : s_items, _element, 40 + (slot_width) / 2 + (slot_width + _margin)*_index, 40 + slot_height / 2, scale, scale, 0, c_white, 1);
 		});
 }
+
+draw_set_font(font_silabas);
+draw_text(view_width - 40, 40, global.levels[global.level_index - 1][1][0])

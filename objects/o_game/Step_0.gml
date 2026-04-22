@@ -6,9 +6,13 @@ with (o_collectibles) {
 	}
 }
 
-if (!has_syllable) {
-    var _index = array_get_index(global.levels, room);
+var _index = array_find_index(global.levels, function(_element) {
+	return _element[0] == room;
+});
 
+global.silabas = global.levels[_index][1];
+
+if (!has_syllable) {
     if (_index != -1 && o_player.inventory[_index] != _index) {
         o_player.inventory[_index] = _index;
         o_player.equiped = _index;
@@ -26,11 +30,10 @@ if (keyboard_check_pressed(ord("P"))) {
 		room_goto(Menu);
 		exit;
 	}
-	room_goto(global.levels[global.level_index]);
+	
+	room_goto(global.levels[global.level_index][0]);
 	o_player.inventory[global.level_index - 1] = global.level_index - 1;
 	global.level_index++;
-
-	
 }
 
 if (keyboard_check_pressed(ord("R"))) {
