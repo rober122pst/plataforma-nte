@@ -29,3 +29,11 @@ if (room_start) {
 		room_start = false;
 	}
 }
+var _proximo_alvo = instance_nearest(o_player.x, o_player.y, o_collectibles);
+
+
+if (instance_exists(_proximo_alvo)) {
+    global.alvo_atual = _proximo_alvo;
+} else {
+    global.alvo_atual = noone;
+}

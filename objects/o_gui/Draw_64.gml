@@ -15,3 +15,15 @@ if (instance_exists(o_player)) {
 
 draw_set_font(font_silabas);
 draw_text(view_width - 40, 40, global.levels[global.level_index - 1][1][0])
+
+
+if (instance_exists(o_player) && instance_exists(global.alvo_atual)) {
+    
+    var _dir = point_direction(o_player.x, o_player.y, global.alvo_atual.x, global.alvo_atual.y);
+    
+
+    draw_sprite_ext(s_arrow_indicator, 0, center, middle - 100, 1, 1, _dir - 90, c_white, 1);
+    
+    
+    draw_text(20, 20, "Angulo calculado: " + string(_dir));
+}

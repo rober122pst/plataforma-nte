@@ -13,3 +13,5 @@ has_syllable = false;
 global.items_id = [ "phones", "glasses", "boots", "cape" ];
 
 global.silabas = [];
+
+global.alvo_atual = o_player;

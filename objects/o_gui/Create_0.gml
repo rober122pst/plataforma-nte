@@ -18,3 +18,11 @@ h_box_down = view_hport[0];
 room_start = false;
 
 font_silabas = font_add_sprite_ext(s_bitmap, "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZÇçÓ", true, 0);
+
+if (!variable_global_exists("alvo_atual")) {
+    global.alvo_atual = noone;
+}
+
+tempo_para_ajuda = 0;
+tempo_limite = 300;   
+mostrar_seta = false;
