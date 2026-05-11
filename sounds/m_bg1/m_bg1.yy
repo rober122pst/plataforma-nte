@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"m_bg1",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":450.87347,
+  "exportDir":"",
+  "name":"m_bg1",
+  "parent":{
+    "name":"Background Sounds",
+    "path":"folders/Sounds/Background Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"m_bg1.mp3",
+  "volume":0.7,
+}

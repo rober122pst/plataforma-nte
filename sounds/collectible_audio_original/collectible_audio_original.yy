@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"collectible_audio_original",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":1.4367347,
+  "exportDir":"",
+  "name":"collectible_audio_original",
+  "parent":{
+    "name":"collectible item",
+    "path":"folders/Sounds/collectible item.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"collectible_audio_original.mp3",
+  "volume":1.0,
+}

@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"shidenbeatsmusic_sound_effect_jumping_in_tv_gameanimation_type_of_sound_137602",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":9.038367,
+  "exportDir":"",
+  "name":"shidenbeatsmusic_sound_effect_jumping_in_tv_gameanimation_type_of_sound_137602",
+  "parent":{
+    "name":"original audio no edited",
+    "path":"folders/Sounds/release the item/original audio no edited.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"shidenbeatsmusic_sound_effect_jumping_in_tv_gameanimation_type_of_sound_137602.mp3",
+  "volume":1.0,
+}

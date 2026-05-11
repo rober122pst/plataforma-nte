@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"Som_quando_liberar_o_item",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":2.037551,
+  "exportDir":"",
+  "name":"Som_quando_liberar_o_item",
+  "parent":{
+    "name":"release the item",
+    "path":"folders/Sounds/release the item.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"Som_quando_liberar_o_item.mp3",
+  "volume":1.0,
+}

@@ -1,0 +1,8 @@
+#macro INPUT_LEFT (keyboard_check(vk_left) or keyboard_check(ord("A")))
+#macro INPUT_RIGHT (keyboard_check(vk_right) or keyboard_check(ord("D")))
+#macro INPUT_JUMP (keyboard_check_pressed(vk_space) or keyboard_check_pressed(ord("W")) or keyboard_check_pressed(vk_up))
+#macro EQUIP_1 (keyboard_check_pressed(vk_numpad1) or keyboard_check_pressed(ord("1"))) 
+#macro EQUIP_2 (keyboard_check_pressed(vk_numpad2) or keyboard_check_pressed(ord("2"))) 
+#macro EQUIP_3 (keyboard_check_pressed(vk_numpad3) or keyboard_check_pressed(ord("3"))) 
+#macro EQUIP_4 (keyboard_check_pressed(vk_numpad4) or keyboard_check_pressed(ord("4"))) 
+#macro EQUIP_5 (keyboard_check_pressed(vk_numpad1) or keyboard_check_pressed(ord("5"))) 

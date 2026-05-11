@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"level_up",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.6530612,
+  "exportDir":"",
+  "name":"level_up",
+  "parent":{
+    "name":"pass the stage",
+    "path":"folders/Sounds/pass the stage.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"level_up.mp3",
+  "volume":1.0,
+}
