@@ -3,7 +3,7 @@ global.level_completed = false;
 global.levels = [
 	[rm_fone, ["FO", "NE"]],
 	[rm_oculos, ["Ó", "CU", "LOS"]],
-	[rm_botas, ["BO", "TAS"]],
+	[o_botas, ["BO", "TAS"]],
 	[rm_capa, ["CA", "PA"]],
 ]
 

@@ -1,1 +1,0 @@
-tempo_restante = 280 

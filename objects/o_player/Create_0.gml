@@ -52,3 +52,5 @@ sprites = {
 }
 
 depth = -1;
+
+o_player.pode_mover = false

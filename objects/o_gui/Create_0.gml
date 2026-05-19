@@ -23,6 +23,7 @@ font_silabas = font_add_sprite_ext(s_bitmap, "0123456789ABCDEFGHIJKLMNOPQRSTUVWX
 tempo_para_ajuda = 100;
 tempo_limite = 110;   
 mostrar_seta = false;
+distancia_texto = ""; // Armazena o texto da distância calculada
 
 if (!variable_global_exists("alvo_atual")) {
     global.alvo_atual = noone;

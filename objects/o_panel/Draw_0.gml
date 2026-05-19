@@ -27,3 +27,13 @@ if (show_input && value != target_value) {
 // Resetar o alinhamento para não bagunçar outros objetos
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
+
+
+draw_self(); 
+
+if(instance_exists(o_player)){
+    draw_set_color(c_lime);
+    draw_circle(x - 1, y + 15, raio, true);
+    
+ 
+}

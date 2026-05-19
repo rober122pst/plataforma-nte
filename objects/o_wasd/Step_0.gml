@@ -8,7 +8,7 @@ if (tempo > 50) {
 // Quando faltarem apenas 50 frames, ele começa a sumir
 else {
     if (image_alpha > 0) {
-        image_alpha -= 0.05; // Diminui a transparência aos poucos
+        image_alpha -= 0.02; // Diminui a transparência aos poucos
     }
 }
 
