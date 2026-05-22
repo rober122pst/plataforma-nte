@@ -31,9 +31,9 @@ draw_set_valign(fa_top);
 
 draw_self(); 
 
-if(instance_exists(o_player)){
+if (instance_exists(o_player)) {
     draw_set_color(c_lime);
-    draw_circle(x - 1, y + 15, raio, true);
     
- 
+    // 🫥 Deixou invisível! As duas barras fazem o GameMaker ignorar essa linha:
+    // draw_circle(x - 1, y + 15, raio, true);
 }

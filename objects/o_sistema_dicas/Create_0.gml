@@ -1,19 +1,24 @@
-// Configurações do Timer
-tempo_perdido = 0;
-tempo_limite_dica = 60 * 2; // 20 segundos (considerando um jogo a 60 FPS)
+// --- SISTEMA ANALÍTICO DE FRUSTRAÇÃO ---
+nivel_frustracao = 0; // Vai de 0 a 100
 
-// Controle de Posição da Janela de Dica
-dica_x = display_get_gui_width() + 70; // Começa totalmente fora da tela (direita)
-dica_x_alvo = display_get_gui_width() + 70; // Destino atual
+tempo_analise = 0;
+pos_x_ancora = 0;
+pos_y_ancora = 0;
 
+// Registra o estado atual do mapa para saber quando há progresso
+qtd_silabas_memoria = instance_number(o_collectibles);
+cartao_na_memoria = false;
 
-// Controle do Texto
+if (instance_exists(o_player)) {
+    cartao_na_memoria = (o_player.inventory[4] != -1);
+    pos_x_ancora = o_player.x;
+    pos_y_ancora = o_player.y;
+}
+
+// Configurações visuais do papiro (dica.gif)
+dica_x = display_get_gui_width() + 50; 
+dica_x_alvo = display_get_gui_width() + 50; 
 texto_dica = "";
 mostrar_janela_dica = false;
 tempo_exibindo_dica = 0;
-texto_fim = "";
-
-// Salva a última posição para saber se o player está parado ou andando sem rumo
-player_ultimo_x = 0;
-player_ultimo_y = 0;
 som_tocado = false;

@@ -47,7 +47,7 @@ if (puzzle_cartao_aberto) {
             if (cartao_y <= fenda_y_alvo + 40 && abs(cartao_x - (display_get_gui_width() / 2)) < 100) {
                 mensagem_feedback = "CARD ACCEPTED!";
                 cor_feedback = c_lime;
-                maquina_ativada = true; // Ativa para liberar o monitor matemático
+                maquina_ativada = true; 
                 puzzle_cartao_aberto = false;
                 
                 // CÁLCULO DOS DADOS
@@ -69,6 +69,17 @@ if (puzzle_cartao_aberto) {
                 if (instance_exists(equacao)) {
                     equacao.num1 = string(value); 
                 }
+
+                // 🌟 SE O MONITOR JÁ FOI RESOLVIDO ANTES:
+                // Ignora o minigame matemático e já deixa colocar outro cartão direto!
+                if (monitor_ja_apareceu) {
+                    if (value != target_value) {
+                        maquina_ativada = false; 
+                    } else {
+                        resolvido = true;
+                    }
+                }
+
             } else {
                 mensagem_feedback = "ALIGN WITH THE SLOT!";
                 cor_feedback = c_orange;
@@ -79,11 +90,12 @@ if (puzzle_cartao_aberto) {
     }
 }
 
-// 3. ATIVA O MONITOR MATEMÁTICO DEPOIS QUE COLOCOU O CARTÃO
+// 3. ATIVA O MONITOR MATEMÁTICO (Só ativa se for a PRIMEIRA vez)
 if (instance_exists(o_player)) {
     var dist = point_distance(x, y, o_player.x, o_player.y);
     
-    if (!resolvido && dist <= raio && maquina_ativada) {
+    // Adicionado a trava "!monitor_ja_apareceu" aqui
+    if (!resolvido && dist <= raio && maquina_ativada && !monitor_ja_apareceu) {
         if (!mostrar_monitor) {
             gerar_conta(); 
             mostrar_monitor = true;
@@ -94,10 +106,11 @@ if (instance_exists(o_player)) {
     } else {
         mostrar_monitor = false;
         escala = lerp(escala, 0, 0.2); 
+
     }
 }
 
-// 4. DIGITAÇÃO DOS NÚMEROS E RESET DA MÁQUINA
+// 4. DIGITAÇÃO DOS NÚMEROS E TRATAMENTO DE ACERTO
 if (mostrar_monitor) {
     var novos_numeros = string_digits(keyboard_string);
     if (novos_numeros != "" && string_length(input_texto) < 6) {
@@ -112,15 +125,13 @@ if (mostrar_monitor) {
     // Quando o jogador acerta a conta:
     if (input_texto == resultado_correto) {
         mostrar_monitor = false;
+        monitor_ja_apareceu = true; // 🌟 Tranca para nunca mais abrir neste painel
         
-        // 🌟 O SEGREDO ESTÁ AQUI: 
-        // Em vez de travar a máquina para sempre, a gente reseta as variáveis.
-        // Assim, se o valor atual ainda não for o "target_value", ela deixa por o cartão de novo!
         if (value != target_value) {
-            maquina_ativada = false; // Permite colocar outro cartão!
-            resolvido = false;       // Pronta para uma nova conta matemática!
+            maquina_ativada = false; // Permite colocar outro cartão imediatamente
+            resolvido = false;       
         } else {
-            resolvido = true;        // Se o valor já deu certo, aí sim encerra em definitivo.
+            resolvido = true;        
         }
     }
 }

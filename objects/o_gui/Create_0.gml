@@ -29,8 +29,14 @@ if (!variable_global_exists("alvo_atual")) {
     global.alvo_atual = noone;
 }
 
-// VARIÁVEIS NOVAS PARA O EFEITO DE DELAY
+// VARIÁVEIS PARA O EFEITO DE DELAY E ÓRBITA
 seta_gui_x = display_get_gui_width() / 2;
 seta_gui_y = display_get_gui_height() / 2;
 angulo_orbita = 0;
-seta_alpha = 0; // Começa invisível
+seta_alpha = 0;     // Começa invisível
+total_silabas = -1; // Começa em -1 para contagem
+
+// Define a cor inicial padrão
+seta_cor = c_white;
+// Adicione isso no final do evento Create do o_gui:
+timer_esconder_seta = 0;

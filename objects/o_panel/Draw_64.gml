@@ -5,7 +5,7 @@ var gui_h = display_get_gui_height();
 var posX = gui_w / 2;
 var posY = gui_h / 2;
 
-// --- AJUSTE ESSENCIAL: DESENHA O PUZZLE DO CARTÃO SE ESTIVER ABERTO ---
+// --- 🌟 INTERAÇÃO 1: DESENHA O PUZZLE DO CARTÃO SE ESTIVER ABERTO ---
 if (puzzle_cartao_aberto && !maquina_ativada) {
     // Escurece o fundo do jogo
     draw_set_color(c_black);
@@ -14,22 +14,60 @@ if (puzzle_cartao_aberto && !maquina_ativada) {
     draw_set_alpha(1);
 
     // Desenha a maquina centralizada
-      draw_sprite_ext(s_machine, 0, posX, posY, 7, 7, 0, c_white, 1); 
+    draw_sprite_ext(s_machine, 0, posX, posY, 7, 7, 0, c_white, 1); 
 
     // Desenha a mão segurando o cartão na posição do arrasto vertical
     draw_sprite_ext(s_mao, 0, cartao_x, cartao_y, 7, 7, 0, c_white, 1);
 
-    // Texto de feedback do minigame do cartão
-    draw_set_font(-1); // Usa a fonte padrão para o aviso do cartão
+  // ================================================================
+    // 🖱️ TUTORIAL DO MOUSE ATUALIZADO (FONTE CORRETA E SEM ERRO DE ACENTO)
+    // ================================================================
+    // Posiciona o elemento bem ajustado no canto direito, sem colidir com a caixa
+    var _tuto_x = gui_w - 300; 
+    var _tuto_y = (gui_h / 2) - 120; 
+    
+    // Desenha o GIF do mouse calculando as frames em tempo real para animar sozinho!
+    if (sprite_exists(s_tutorial_mouse)) {
+        // Pega o total de frames do seu GIF importado
+        var _total_frames = sprite_get_number(s_tutorial_mouse);
+        
+        // Faz o GameMaker passar as frames automaticamente baseado no tempo do jogo
+        // O número 100 controla a velocidade. Se achar muito rápido, mude para 150. Se achar lento, mude para 50.
+        var _frame_atual = (current_time / 100) % _total_frames;
+        
+        draw_sprite_ext(s_tutorial_mouse, _frame_atual, _tuto_x, _tuto_y, 4, 4, 0, c_white, 1);
+    }
+    
+    // Aplica a sua fonte correta!
+    draw_set_font(font_sila); 
     draw_set_halign(fa_center);
-
+    draw_set_valign(fa_top);
+    
+    // Frase sem acentos para evitar que a fonte pixel art desenhe quadrados bugados
+    var _frase_tutorial = "Segure o botao esquerdo do mouse encima da mao e arraste-o para cima";
+    var _texto_y = _tuto_y + 150; 
+    
+    // Espaço horizontal amplo para as palavras respirarem
+    var _largura_maxima = 260; 
+    var _espacamento_linhas = 24; 
+    
+    // 1. Sombra preta de fundo
+    draw_set_color(c_black);
+    draw_text_ext(_tuto_x + 2, _texto_y + 2, _frase_tutorial, _espacamento_linhas, _largura_maxima); 
+    
+    // 2. Texto principal amarelo destacado
+    draw_set_color(c_yellow);
+    draw_text_ext(_tuto_x, _texto_y, _frase_tutorial, _espacamento_linhas, _largura_maxima);
+    
+    // Reseta as configurações padrão do GameMaker
+    draw_set_halign(fa_left);
+    draw_set_valign(fa_top);
+    draw_set_color(c_white);
 }
 
-// --- SEU CÓDIGO ORIGINAL DO MONITOR (MANTIDO INTACTO) ---
-// --- SEU CÓDIGO DO MONITOR COM EFEITO RETRO ---
-draw_set_font(fnt_monitor);
-
-if (escala > 0.01) { 
+// --- 🌟 INTERAÇÃO 2: SEU CÓDIGO ORIGINAL DO MONITOR COM EFEITO RETRO ---
+// Só roda se o puzzle do cartão NÃO estiver ativo, evitando que as duas telas se sobreponham
+else if (escala > 0.01) { 
     // Desenha o sprite usando a escala animada
     draw_sprite_ext(s_monitor, 0, posX, posY, escala, escala, 0, c_white, 1);
     
@@ -70,5 +108,6 @@ if (escala > 0.01) {
         // Reseta o alinhamento para não bugar outras partes do jogo
         draw_set_halign(fa_left);
         draw_set_valign(fa_top);
+        draw_set_color(c_white);
     }
 }

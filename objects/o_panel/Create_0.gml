@@ -16,7 +16,9 @@ cartao_x = 0;
 cartao_y = 0;
 segurando_cartao = false;
 cor_feedback = c_white;
+// ... mantenha as suas outras variáveis do Create ...
 
+monitor_ja_apareceu = false; // Garante que a conta matemática só aconteça uma vez
 gerar_conta = function() {
     var num1 = irandom_range(1, 10);
     var num2 = irandom_range(1, 10);
