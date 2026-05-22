@@ -104,19 +104,23 @@ if (instance_exists(global.alvo_atual)) {
 }
 
 // 📍 5. MOVIMENTAÇÃO E ÓRBITA DA SETA NA GUI SEGUINDO O PLAYER
-if (instance_exists(o_player)) {
+if (instance_exists(o_player) && instance_exists(global.alvo_atual)) {
     var camera = view_camera[0];
     var p_gui_x = (o_player.x - camera_get_view_x(camera)) * (display_get_gui_width() / camera_get_view_width(camera));
     var p_gui_y = (o_player.y - camera_get_view_y(camera)) * (display_get_gui_height() / camera_get_view_height(camera));
 
-    var dist_horizontal = -140; 
-    var dist_vertical   = 50;  
-    var altura_offset   = -70; 
+	var t_gui_x = (global.alvo_atual.x - camera_get_view_x(camera)) * (display_get_gui_width() / camera_get_view_width(camera));
+    var t_gui_y = (global.alvo_atual.y - camera_get_view_y(camera)) * (display_get_gui_height() / camera_get_view_height(camera));
 
-    angulo_orbita += 0.2; 
+	var dir = point_direction(p_gui_x, p_gui_y, t_gui_x, t_gui_y);
+	var dist = point_distance(p_gui_x, p_gui_y, t_gui_x, t_gui_y);
+
+    var dist_horizontal = dist/4; 
+    var dist_vertical   = dist/4;  
+
     
-    var alvo_x = p_gui_x + lengthdir_x(dist_horizontal, angulo_orbita);
-    var alvo_y = p_gui_y + lengthdir_y(dist_vertical, angulo_orbita) + altura_offset;
+    var alvo_x = p_gui_x + lengthdir_x(dist_horizontal, dir);
+    var alvo_y = p_gui_y + lengthdir_y(dist_vertical, dir);
 
     seta_gui_x = lerp(seta_gui_x, alvo_x, 0.15);
     seta_gui_y = lerp(seta_gui_y, alvo_y, 0.15);

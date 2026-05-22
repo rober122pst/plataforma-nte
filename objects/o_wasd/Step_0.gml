@@ -28,3 +28,5 @@ if (tempo > 0) {
     // Só destrói o objeto de fato quando o tempo zerar
     instance_destroy();
 }
+
+show_debug_message(image_xscale);

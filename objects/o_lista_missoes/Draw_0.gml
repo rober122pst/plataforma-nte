@@ -39,13 +39,13 @@ if (instance_exists(o_player)) {
         // Se encontrou o alvo válido, faz o cálculo e o desenho em tempo real
         if (_alvo != noone) {
             var _start_x = o_player.x;
-            var _start_y = o_player.y - 16; // Linha sai do peito/cintura do player
-            var _end_x = _alvo.x;
-            var _end_y = _alvo.y;
+            var _start_y = o_player.y - sprite_get_height(s_player_collision) / 2; // Linha sai do peito/cintura do player
+            var _end_x = _alvo.x + 8;
+            var _end_y = _alvo.y + 16;
             
             // Calcula a distância real e transforma em metros (sua grid de 32px)
             var _dist_pixels = point_distance(_start_x, _start_y, _end_x, _end_y);
-            var _dist_metros = _dist_pixels / 32; 
+            var _dist_metros = _dist_pixels / 16; 
             
             // ============================================================
             // 🧠 CÁLCULO DO FADE OUT (TRANSPARÊNCIA POR DISTÂNCIA)
@@ -53,8 +53,8 @@ if (instance_exists(o_player)) {
             var _linha_alpha = 1.0; 
             
             // Se estiver a menos de 3 metros, calcula o desaparecimento suave
-            if (_dist_metros <= 2){
-                _linha_alpha = _dist_metros / 2;
+            if (_dist_metros <= 4){
+                _linha_alpha = _dist_metros / 4;
             }
             
             _linha_alpha = clamp(_linha_alpha, 0, 1);
@@ -67,7 +67,7 @@ if (instance_exists(o_player)) {
                 
                 // 🏹 LÓGICA DE SUBSTUIÇÃO DA LINHA BRANCA PELO RASTRO DE S_SETA
                 var _direcao = point_direction(_start_x, _start_y, _end_x, _end_y);
-                var _espacamento_setas = 32// Distância em pixels entre uma seta e outra no chão
+                var _espacamento_setas = 20// Distância em pixels entre uma seta e outra no chão
                 
                 // Laço de repetição que projeta as setas do jogador até a máquina alvo
                 for (var d = 0; d < _dist_pixels; d += _espacamento_setas) {
@@ -76,7 +76,7 @@ if (instance_exists(o_player)) {
                     var _seta_y = _start_y + lengthdir_y(d, _direcao);
                     
                     // Desenha a s_seta aplicando a rotação correta baseada no vetor (_direcao - 90)
-                    draw_sprite_ext(s_seta, 0, _seta_x, _seta_y, 1, 1, _direcao - 90, c_white, _linha_alpha);
+                    draw_sprite_ext(s_chevron, (current_time div 250) mod 2, _seta_x, _seta_y, 1, 1, _direcao - 90, c_white, _linha_alpha);
                 }
                 
                 // Ponto central para colocar o texto flutuante dos metros

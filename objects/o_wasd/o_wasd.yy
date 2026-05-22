@@ -20,7 +20,7 @@
   "physicsGroup":1,
   "physicsKinematic":false,
   "physicsLinearDamping":0.1,
-  "physicsObject":true,
+  "physicsObject":false,
   "physicsRestitution":0.1,
   "physicsSensor":false,
   "physicsShape":1,
@@ -39,6 +39,9 @@
     "name":"s_wsd",
     "path":"sprites/s_wsd/s_wsd.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"s_wsd",
+    "path":"sprites/s_wsd/s_wsd.yy",
+  },
   "visible":true,
 }
